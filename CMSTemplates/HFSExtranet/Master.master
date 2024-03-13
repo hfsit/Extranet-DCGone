@@ -1,0 +1,289 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="CMSTemplates_HFSExtranet_Master" %>
+
+<%@ Register Src="~/CMSWebParts/HFSExtranet/HFSExtranet_PageTitle.ascx" TagPrefix="Cms"
+    TagName="PageTitle" %>
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head runat="server">
+    <title id="Title1" runat="server"></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Google web fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700" />
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:600,900" rel="stylesheet">
+
+    <!-- Leverage Kentico's stylesheet caching for our static file -->
+    <link href="/CMSPages/GetResource.ashx?stylesheetfile=~/App_Themes/HFSExtranet/CSS/style.css"
+        type="text/css" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Object-fit hack for IE. (Reads CSS font-family property for implied object-fit value) -->
+    <script src="/App_Themes/HFSExtranet/Scripts/libs/ofi.min.js"></script>
+
+    <!-- FontAwesome icon font -->
+    <script src="https://use.fontawesome.com/766985c871.js"></script>
+
+    <asp:ContentPlaceHolder ID="MasterHead" runat="server"></asp:ContentPlaceHolder>
+
+    <script>
+        $(function () {
+
+            objectFitImages(); // function resides in ofi.min.js. (See above)
+
+            var mobileMenuButton = $('#mobile-menu'),
+                mobileNavMenu = $('#mobile-nav'),
+                mobileSearchInput = $('#mobile-search'),
+                desktopSearchButton = $('#desktop-search'),
+                desktopSearchPane = $('#desktop-search-pane'),
+                desktopSearchInput = $('#desktop-search-input');
+
+            // Toggle mobile menu when button is clicked, retaining collapse status for desktop search input.
+            mobileMenuButton.click(function () {
+                desktopSearchPane.toggleClass('d-none');
+                mobileNavMenu.toggleClass('d-none');
+                mobileSearchInput.focus();
+            });
+
+            // Toggle desktop search pane when button is clicked, retaining collapse status for mobile menu.
+            desktopSearchButton.click(function () {
+                mobileNavMenu.toggleClass('d-none');
+                desktopSearchPane.toggleClass('d-none');
+                desktopSearchInput.focus();
+            });
+
+            // Mirror input from one field to the other
+            desktopSearchInput.bind('keypress keyup', function () {
+                mobileSearchInput.val($(this).val());
+            });
+            mobileSearchInput.bind('keypress keyup', function () {
+                desktopSearchInput.val($(this).val());
+            });
+
+            // Switch inputs and retain search value between breakpoints
+            desktopSearchInput.bind('blur', function () {
+                mobileSearchInput.focus();
+            });
+            mobileSearchInput.bind('blur', function () {
+                desktopSearchInput.focus();
+            });
+            $(window).resize(function () {
+                if ($(window).width() >= 992 && $('#mobile-search').is(':focus')) {
+                    $('#desktop-search-input').focus();
+                    var tmpStr = $('#desktop-search-input').val();
+                    $('#desktop-search-input').val('');
+                    $('#desktop-search-input').val(tmpStr);
+                } else if ($(window).width() < 992 && $('#desktop-search-input').is(':focus')) {
+                    $('#mobile-search').focus();
+                    var tmpStr = $('#mobile-search').val();
+                    $('#mobile-search').val('');
+                    $('#mobile-search').val(tmpStr);
+                }
+            });
+
+            mobileSearchInput.keypress(function (e) {
+                if (e.which == 13) { window.location.href = '/Search?q=' + mobileSearchInput.val().replace(' ', '+'); return false; }
+            });
+
+            desktopSearchInput.keypress(function (e) {
+                if (e.which == 13) { window.location.href = '/Search?q=' + desktopSearchInput.val().replace(' ', '+'); return false }
+            });
+
+            if ($(location).attr('hostname').indexOf('v-cms-00') >= 0) {
+                $('header').removeClass('background-purple');
+                $('header').addClass('background-gray-dark');
+            }
+
+            $('.btn-nav').each(function () {
+                $(this).html('<div class="btn-nav-text">' + $(this).text() + '</div><div class="btn-nav-chevron"><span class="fa fa-angle-right" aria-hidden="true"></span></div>');
+            });
+
+
+            $('button[title="Calendar"] i').each(function () {
+                $(this).replaceWith('<i class="fa fa-calendar"></i>');
+
+            });
+            
+
+        });
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-29JYF25HLW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-29JYF25HLW');
+    </script>
+</head>
+
+<body>
+    <form id="BodyForm" runat="server">
+
+        <asp:ContentPlaceHolder ID="MasterPreBody" runat="server"></asp:ContentPlaceHolder>
+        <a style="position:absolute;z-index:999;" class="p-3 background-gray-light sr-only sr-only-focusable" href="#mainContent">Skip to main content</a>    
+        <header class="d-block background-purple">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <a id="logo" href="/">
+                            <img id="logo-svg" src="/App_Themes/HFSExtranet/SVGs/Logo.svg" aria-hidden="true" alt="University of Washington Housing & Food Services" />
+                        </a>
+                        <a id="mobile-menu" href="#">
+                <span class="fa fa-bars"></span>
+            </a>
+                    </div>
+                </div>
+                <nav aria-label="Mobile Navigation">
+                    <ul class="row d-none" id="mobile-nav" >
+                        <li class="col-12">
+                            <div role="search" aria-label="Mobile Search">
+                                <label class="sr-only" for="mobile-search">Search HFS</label>
+                                <input id="mobile-search" type="text" class="form-control" placeholder="What can we help you find?">
+                            </div>
+                        </li>
+                        <li class="col-12">
+                            <a class="col-12" href="/Live">Live</a>
+                        </li>
+                        <li class="col-12">
+
+                        <a href="/Experience">Experience</a>
+                        </li>
+                        <li class="col-12"><a href="/Eat">Eat</a></li>
+                        <li class="col-12">
+                             <a href="/Explore">Explore</a>
+                        </li>
+                   
+                    </ul>
+                </nav>
+            </div>
+            <div id="desktop-search-pane" class="d-none" role="search" aria-label="Search">
+                <label class="sr-only" for="desktop-search-input">Serach HFS</label>
+                <input id="desktop-search-input" class="background-gray-light" type="text" placeholder="What can we help you find?">
+            </div>
+            <nav>
+                <ul id="desktop-nav">
+                    <li><a href="/Live">Live</a></li>
+                    <li class="boundless-slash" aria-hidden="true"></li>
+                    <li><a href="/Eat">Eat</a></li>
+                    <li class="boundless-slash" aria-hidden="true"></li>
+                    <li><a href="/Experience">Experience</a></li>
+                    <li class="boundless-slash" aria-hidden="true"></li>
+                    <li><a href="/Explore">Explore</a></li>
+                    <li class="boundless-slash" aria-hidden="true"></li>
+                    <li><a id="desktop-search" href="#" aria-label="Search HFS"><span class="fa fa-search"></span></a></li>
+                </ul>
+            </nav>
+            
+        </header>
+        <main id="mainContent">
+            <asp:ContentPlaceHolder ID="MasterBody" runat="server"></asp:ContentPlaceHolder>
+        </main>
+        <footer class="background-purple small">
+            <div class="mainfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-none d-lg-block col-lg-3 pt-1">
+                            <img src="/App_Themes/HFSExtranet/SVGs/Signature.svg" style="width: 85%"
+                                alt="University of Washington Housing & Food Services" />
+                        </div>
+                        <div class="col-md-3 col-lg-2">
+                            <p class="mb-0">
+                                <strong>HFS</strong><br />
+                                <a href="/Contact-Us">Contact Us</a><br />
+                                <a href="/About">About HFS</a><br />
+                                <a href="/Staff-Jobs">Staff Jobs</a><br />
+                                <a href="/Meeting-and-Event-Space">Meeting Space</a><br />
+                                <a href="/Summer-Conference-Center">Conference Services</a><br />
+                                <a href="/Seattle-Intern-Housing">Intern Housing</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 col-lg-4 pt-4 pt-md-0">
+                            <p class="mb-0">
+                                <strong>UW</strong><br />
+                                <a href="https://wellbeing.uw.edu/" target="_blank">Husky Health &amp; Wellbeing</a><br />
+                                <a href="https://my.uw.edu/" target="_blank">MyUW</a><br />
+                                <a href="https://www.washington.edu/studentlife/" target="_blank">Student Life</a><br />
+                                <a href="https://depts.washington.edu/uwdrs/" target="_blank">Disability Resources for Students</a><br />
+                                <a href="https://www.washington.edu/accessibility/" target="_blank">Accessible Technology</a><br />
+                                <a href="https://green.uw.edu/inform" target="_blank">Sustainability</a>
+                            </p>
+                        </div>
+                        <div class="col-md-5 col-lg-3 pt-4 pt-md-0">
+                            <p class="mb-2">
+                                <strong>CONNECT WITH US</strong>
+                            </p>
+                            <p class="mb-2">
+                                <a class="d-inline-block" href="https://www.facebook.com/UWHFS" aria-label="HFS on Facebook" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-facebook fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                                <a class="d-inline-block" href="https://www.instagram.com/uwhfs" aria-label="HFS on Instagram" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-instagram fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                                <a class="d-inline-block" href="https://twitter.com/uofwhfs" aria-label="HFS on Twitter" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                                <a class="d-inline-block" href="https://www.youtube.com/user/UWHFS" aria-label="HFS on YouTube" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-youtube fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                                <a class="d-inline-block" href="https://www.linkedin.com/company/uw-housing-food-services" aria-label="HFS on LinkedIn" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-linkedin-square fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                            </p>
+                            <p class="mb-0">
+                                1045 NE Campus Parkway<br />
+                                Seattle, WA 98105 | <a href="mailto:hfsinfo@uw.edu">hfsinfo@uw.edu</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-9 mb-3 mb-md-0">
+                            &copy;&nbsp;<%= DateTime.Now.Year %> HOUSING &amp; FOOD SERVICES | UNIVERSITY OF WASHINGTON
+                        </div>
+                        <div class="col-4 col-md-2 col-lg-1">
+                            <a href="https://www.washington.edu/online/privacy" target="_blank">PRIVACY</a>
+                        </div>
+                        <div class="col-4 col-md-2 col-lg-1">
+                            <a href="https://www.washington.edu/online/terms" target="_blank">TERMS</a>
+                        </div>
+                        <div class="col-4 col-md-2 col-lg-1">
+                            <a href="/Site-Map">SITE MAP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+
+    <script src="https://www.washington.edu/static/alert.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/CMSTemplates/HFSExtranet/Master.master" AutoEventWireup="true"
+    CodeFile="KenticoMaster.master.cs" Inherits="CMSTemplates_HFSExtranet_KenticoMaster" %>
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MasterHead" runat="Server">
+    <asp:ContentPlaceHolder ID="MasterHead" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content" ContentPlaceHolderID="MasterPreBody" runat="server">
+    <asp:PlaceHolder runat="server" ID="plcManagers">
+        <asp:ScriptManager ID="manScript" runat="server" ScriptMode="Release" EnableViewState="false" />
+        <cms:CMSPortalManager ID="CMSPortalManager" runat="server" EnableViewState="false" />
+    </asp:PlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="MasterBody" runat="Server">
+    <asp:ContentPlaceHolder ID="MasterBody" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
