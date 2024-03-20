@@ -32,7 +32,32 @@
     <script src="https://use.fontawesome.com/766985c871.js"></script>
 
     <asp:ContentPlaceHolder ID="MasterHead" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        .fa.fa-twitter{
+	font-family:sans-serif;
+}
+.fa.fa-twitter::before{
+	content:"𝕏";
+	font-size:1.1em;
+}
 
+.fa-tiktok {
+     display: inline-block;
+    width: 20px;
+    height: 20px;
+      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000' d='M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    position: relative;
+    left: 11px;
+    top: 2px;
+}
+    </style>
     <script>
         $(function () {
 
@@ -220,46 +245,52 @@
                             </p>
                         </div>
                         <div class="col-md-5 col-lg-3 pt-4 pt-md-0">
-                            <p class="mb-2">
-                                <strong>CONNECT WITH US</strong>
-                            </p>
-                            <p class="mb-2">
-                                <a class="d-inline-block" href="https://www.facebook.com/UWHFS" aria-label="HFS on Facebook" target="_blank">
-                                    <span class="fa-stack fa-lg">
-                                        <span class="fa fa-circle fa-stack-2x"></span>
-                                        <span class="fa fa-facebook fa-stack-1x fa-inverse"></span>
-                                    </span>
-                                </a>
-                                <a class="d-inline-block" href="https://www.instagram.com/uwhfs" aria-label="HFS on Instagram" target="_blank">
-                                    <span class="fa-stack fa-lg">
-                                        <span class="fa fa-circle fa-stack-2x"></span>
-                                        <span class="fa fa-instagram fa-stack-1x fa-inverse"></span>
-                                    </span>
-                                </a>
-                                <a class="d-inline-block" href="https://twitter.com/uofwhfs" aria-label="HFS on Twitter" target="_blank">
-                                    <span class="fa-stack fa-lg">
-                                        <span class="fa fa-circle fa-stack-2x"></span>
-                                        <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
-                                    </span>
-                                </a>
-                                <a class="d-inline-block" href="https://www.youtube.com/user/UWHFS" aria-label="HFS on YouTube" target="_blank">
-                                    <span class="fa-stack fa-lg">
-                                        <span class="fa fa-circle fa-stack-2x"></span>
-                                        <span class="fa fa-youtube fa-stack-1x fa-inverse"></span>
-                                    </span>
-                                </a>
-                                <a class="d-inline-block" href="https://www.linkedin.com/company/uw-housing-food-services" aria-label="HFS on LinkedIn" target="_blank">
-                                    <span class="fa-stack fa-lg">
-                                        <span class="fa fa-circle fa-stack-2x"></span>
-                                        <span class="fa fa-linkedin-square fa-stack-1x fa-inverse"></span>
-                                    </span>
-                                </a>
-                            </p>
-                            <p class="mb-0">
-                                1045 NE Campus Parkway<br />
-                                Seattle, WA 98105 | <a href="mailto:hfsinfo@uw.edu">hfsinfo@uw.edu</a>
-                            </p>
-                        </div>
+    <p class="mb-2">
+        <strong>CONNECT WITH US</strong>
+    </p>
+    <p class="mb-2">
+        <a class="d-inline-block" href="https://www.facebook.com/UWHFS" aria-label="HFS on Facebook" target="_blank">
+            <span class="fa-stack fa-lg">
+                <span class="fa fa-circle fa-stack-2x"></span>
+                <span class="fa fa-facebook fa-stack-1x fa-inverse"></span>
+            </span>
+        </a>
+        <a class="d-inline-block" href="https://www.instagram.com/uwhfs" aria-label="HFS on Instagram" target="_blank">
+            <span class="fa-stack fa-lg">
+                <span class="fa fa-circle fa-stack-2x"></span>
+                <span class="fa fa-instagram fa-stack-1x fa-inverse"></span>
+            </span>
+        </a>
+        <a class="d-inline-block" href="https://twitter.com/uofwhfs" aria-label="HFS on Twitter" target="_blank">
+            <span class="fa-stack fa-lg">
+                <span class="fa fa-circle fa-stack-2x"></span>
+                <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
+            </span>
+        </a>
+        <a class="d-inline-block" href="https://www.youtube.com/user/UWHFS" aria-label="HFS on YouTube" target="_blank">
+            <span class="fa-stack fa-lg">
+                <span class="fa fa-circle fa-stack-2x"></span>
+                <span class="fa fa-youtube fa-stack-1x fa-inverse"></span>
+            </span>
+        </a>
+        <a class="d-inline-block" href="https://www.linkedin.com/company/uw-housing-food-services" aria-label="HFS on LinkedIn" target="_blank">
+            <span class="fa-stack fa-lg">
+                <span class="fa fa-circle fa-stack-2x"></span>
+                <span class="fa fa-linkedin-square fa-stack-1x fa-inverse"></span>
+            </span>
+        </a>
+        <a class="d-inline-block" href="/Home" aria-label="HFS on Tiktok" target="_blank">
+            <span class="fa-stack fa-lg">
+                <span class="fa fa-circle fa-stack-2x"></span>
+                <span class="fa fa-tiktok fa-stack-1x fa-inverse"></span>
+            </span>
+        </a>
+    </p>
+    <p class="mb-0">
+        1045 NE Campus Parkway<br />
+        Seattle, WA 98105 | <a href="mailto:hfsinfo@uw.edu">hfsinfo@uw.edu</a>
+    </p>
+</div>
                     </div>
                 </div>
             </div>
