@@ -18,13 +18,12 @@
 
     <!-- Leverage Kentico's stylesheet caching for our static file -->
     <link href="/CMSPages/GetResource.ashx?stylesheetfile=~/App_Themes/HFSExtranet/CSS/style.css"
-        type="text/css" rel="stylesheet" />
+          type="text/css" rel="stylesheet" />
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
     <!-- Object-fit hack for IE. (Reads CSS font-family property for implied object-fit value) -->
     <script src="/App_Themes/HFSExtranet/Scripts/libs/ofi.min.js"></script>
 
@@ -33,30 +32,31 @@
 
     <asp:ContentPlaceHolder ID="MasterHead" runat="server"></asp:ContentPlaceHolder>
     <style>
-        .fa.fa-twitter{
-	font-family:sans-serif;
-}
-.fa.fa-twitter::before{
-	content:"𝕏";
-	font-size:1.1em;
-}
+        .fa.fa-twitter {
+            font-family: sans-serif;
+        }
 
-.fa-tiktok {
-     display: inline-block;
-    width: 20px;
-    height: 20px;
-      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000' d='M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z'/%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    position: relative;
-    left: 11px;
-    top: 2px;
-}
+            .fa.fa-twitter::before {
+                content: "𝕏";
+                font-size: 1.1em;
+            }
+
+        .fa-tiktok {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000' d='M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z'/%3E%3C/svg%3E");
+            background-color: currentColor;
+            -webkit-mask-image: var(--svg);
+            mask-image: var(--svg);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            position: relative;
+            left: 8px;
+            top: 2px;
+        }
     </style>
     <script>
         $(function () {
@@ -135,7 +135,7 @@
                 $(this).replaceWith('<i class="fa fa-calendar"></i>');
 
             });
-            
+
 
         });
     </script>
@@ -155,9 +155,9 @@
     <form id="BodyForm" runat="server">
 
         <asp:ContentPlaceHolder ID="MasterPreBody" runat="server"></asp:ContentPlaceHolder>
-        <a style="position:absolute;z-index:999;" class="p-3 background-gray-light sr-only sr-only-focusable" href="#mainContent">Skip to main content</a>    
+        <a style="position:absolute;z-index:999;" class="p-3 background-gray-light sr-only sr-only-focusable" href="#mainContent">Skip to main content</a>
         <header class="d-block background-purple">
-            
+
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -165,12 +165,12 @@
                             <img id="logo-svg" src="/App_Themes/HFSExtranet/SVGs/Logo.svg" aria-hidden="true" alt="University of Washington Housing & Food Services" />
                         </a>
                         <a id="mobile-menu" href="#">
-                <span class="fa fa-bars"></span>
-            </a>
+                            <span class="fa fa-bars"></span>
+                        </a>
                     </div>
                 </div>
                 <nav aria-label="Mobile Navigation">
-                    <ul class="row d-none" id="mobile-nav" >
+                    <ul class="row d-none" id="mobile-nav">
                         <li class="col-12">
                             <div role="search" aria-label="Mobile Search">
                                 <label class="sr-only" for="mobile-search">Search HFS</label>
@@ -182,13 +182,13 @@
                         </li>
                         <li class="col-12">
 
-                        <a href="/Experience">Experience</a>
+                            <a href="/Experience">Experience</a>
                         </li>
                         <li class="col-12"><a href="/Eat">Eat</a></li>
                         <li class="col-12">
-                             <a href="/Explore">Explore</a>
+                            <a href="/Explore">Explore</a>
                         </li>
-                   
+
                     </ul>
                 </nav>
             </div>
@@ -209,7 +209,7 @@
                     <li><a id="desktop-search" href="#" aria-label="Search HFS"><span class="fa fa-search"></span></a></li>
                 </ul>
             </nav>
-            
+
         </header>
         <main id="mainContent">
             <asp:ContentPlaceHolder ID="MasterBody" runat="server"></asp:ContentPlaceHolder>
@@ -220,7 +220,7 @@
                     <div class="row">
                         <div class="d-none d-lg-block col-lg-3 pt-1">
                             <img src="/App_Themes/HFSExtranet/SVGs/Signature.svg" style="width: 85%"
-                                alt="University of Washington Housing & Food Services" />
+                                 alt="University of Washington Housing & Food Services" />
                         </div>
                         <div class="col-md-3 col-lg-2">
                             <p class="mb-0">
@@ -245,59 +245,59 @@
                             </p>
                         </div>
                         <div class="col-md-5 col-lg-3 pt-4 pt-md-0">
-    <p class="mb-2">
-        <strong>CONNECT WITH US</strong>
-    </p>
-    <p class="mb-2">
-        <a class="d-inline-block" href="https://www.facebook.com/UWHFS" aria-label="HFS on Facebook" target="_blank">
-            <span class="fa-stack fa-lg">
-                <span class="fa fa-circle fa-stack-2x"></span>
-                <span class="fa fa-facebook fa-stack-1x fa-inverse"></span>
-            </span>
-        </a>
-        <a class="d-inline-block" href="https://www.instagram.com/uwhfs" aria-label="HFS on Instagram" target="_blank">
-            <span class="fa-stack fa-lg">
-                <span class="fa fa-circle fa-stack-2x"></span>
-                <span class="fa fa-instagram fa-stack-1x fa-inverse"></span>
-            </span>
-        </a>
-        <a class="d-inline-block" href="https://twitter.com/uofwhfs" aria-label="HFS on Twitter" target="_blank">
-            <span class="fa-stack fa-lg">
-                <span class="fa fa-circle fa-stack-2x"></span>
-                <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
-            </span>
-        </a>
-        <a class="d-inline-block" href="https://www.youtube.com/user/UWHFS" aria-label="HFS on YouTube" target="_blank">
-            <span class="fa-stack fa-lg">
-                <span class="fa fa-circle fa-stack-2x"></span>
-                <span class="fa fa-youtube fa-stack-1x fa-inverse"></span>
-            </span>
-        </a>
-        <a class="d-inline-block" href="https://www.linkedin.com/company/uw-housing-food-services" aria-label="HFS on LinkedIn" target="_blank">
-            <span class="fa-stack fa-lg">
-                <span class="fa fa-circle fa-stack-2x"></span>
-                <span class="fa fa-linkedin-square fa-stack-1x fa-inverse"></span>
-            </span>
-        </a>
-        <a class="d-inline-block" href="/Home" aria-label="HFS on Tiktok" target="_blank">
-            <span class="fa-stack fa-lg">
-                <span class="fa fa-circle fa-stack-2x"></span>
-                <span class="fa fa-tiktok fa-stack-1x fa-inverse"></span>
-            </span>
-        </a>
-    </p>
-    <p class="mb-0">
-        1045 NE Campus Parkway<br />
-        Seattle, WA 98105 | <a href="mailto:hfsinfo@uw.edu">hfsinfo@uw.edu</a>
-    </p>
-</div>
+                            <p class="mb-2">
+                                <strong>CONNECT WITH US</strong>
+                            </p>
+                            <p class="mb-2">
+                                <a class="d-inline-block" href="https://www.facebook.com/UWHFS" aria-label="HFS on Facebook" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-facebook fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                                <a class="d-inline-block" href="https://www.instagram.com/uwhfs" aria-label="HFS on Instagram" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-instagram fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                                <a class="d-inline-block" href="https://twitter.com/uofwhfs" aria-label="HFS on Twitter" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                                <a class="d-inline-block" href="https://www.youtube.com/user/UWHFS" aria-label="HFS on YouTube" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-youtube-play fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                                <a class="d-inline-block" href="https://www.linkedin.com/company/uw-housing-food-services" aria-label="HFS on LinkedIn" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-linkedin-square fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                                <a class="d-inline-block" href="https://www.tiktok.com/@uwhfs" aria-label="HFS on Tiktok" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <span class="fa fa-circle fa-stack-2x"></span>
+                                        <span class="fa fa-tiktok fa-stack-1x fa-inverse"></span>
+                                    </span>
+                                </a>
+                            </p>
+                            <p class="mb-0">
+                                1045 NE Campus Parkway<br />
+                                Seattle, WA 98105 | <a href="mailto:hfsinfo@uw.edu">hfsinfo@uw.edu</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="subfooter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-9 mb-3 mb-md-0">
+                        <div class="col-12 col-md-6 col-lg-9 mb-3 mb-md-0" style="color:white">
                             &copy;&nbsp;<%= DateTime.Now.Year %> HOUSING &amp; FOOD SERVICES | UNIVERSITY OF WASHINGTON
                         </div>
                         <div class="col-4 col-md-2 col-lg-1">
