@@ -1,0 +1,1 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="~/CMSWebParts/HFSExtranet/HFSExtranet_RowThreeColumns_NoCollapse.ascx.cs" Inherits="CMSWebParts_HFSExtranet_HFSExtranet_RowThreeColumns_NoCollapse" %>
