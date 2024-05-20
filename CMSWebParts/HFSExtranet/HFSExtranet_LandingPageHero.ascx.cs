@@ -16,6 +16,14 @@ public partial class CMSWebParts_HFSExtranet_HFSExtranet_LandingPageHero : CMSAb
         base.OnContentLoaded();
 
         imgLandingPageHeroImage.ImageUrl = GetValue("Image").ToString();
+
+        string ImageAltText = ValidationHelper.GetString(this.GetValue("ImageAltText"), "");
+        if (!String.IsNullOrEmpty(ImageAltText)) {
+            imgLandingPageHeroImage.AlternateText = ImageAltText;
+        }
+        else {
+            imgLandingPageHeroImage.Attributes["aria-hidden"] = "true";
+        }
         pnlLPHeroContent.Controls.AddAt(0, new LiteralControl(GetValue("Content").ToString()));
 
         hplLPHeroButton.Text = GetValue("ButtonText").ToString();
