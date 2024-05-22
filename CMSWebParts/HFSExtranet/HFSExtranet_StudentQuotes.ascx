@@ -112,16 +112,16 @@
 <div class="carousel slide" data-ride="carousel" id="carouselQuotes">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <p class="lead text-center mb-1">&quot;<asp:Literal ID="litQuote1Content" runat="server" />&quot;</p>
-            <p class="text-center text-uppercase small"><strong><asp:Literal ID="litQuote1Name" runat="server" /></strong><span class="font-weight-light">,&nbsp;<asp:Literal ID="litQuote1Caption" runat="server" /></span></p>
+            <p class="lead text-center mb-1">&quot;<asp:Literal ID="litQuote1Content" />&quot;</p>
+            <p class="text-center text-uppercase small"><strong><asp:Literal ID="litQuote1Name" /></strong><span class="font-weight-light">,&nbsp;<asp:Literal ID="litQuote1Caption" /></span></p>
         </div>
         <div class="carousel-item">
-            <p class="lead text-center mb-1">&quot;<asp:Literal ID="litQuote2Content" runat="server" />&quot;</p>
-            <p class="text-center text-uppercase small"><strong><asp:Literal ID="litQuote2Name" runat="server" /></strong><span class="font-weight-light">,&nbsp;<asp:Literal ID="litQuote2Caption" runat="server" /></span></p>
+            <p class="lead text-center mb-1">&quot;<asp:Literal ID="litQuote2Content" />&quot;</p>
+            <p class="text-center text-uppercase small"><strong><asp:Literal ID="litQuote2Name" /></strong><span class="font-weight-light">,&nbsp;<asp:Literal ID="litQuote2Caption" /></span></p>
         </div>
         <div class="carousel-item">
-            <p class="lead text-center mb-1">&quot;<asp:Literal ID="litQuote3Content" runat="server" />&quot;</p>
-            <p class="text-center text-uppercase small"><strong><asp:Literal ID="litQuote3Name" runat="server" /></strong><span class="font-weight-light">,&nbsp;<asp:Literal ID="litQuote3Caption" runat="server" /></span></p>
+            <p class="lead text-center mb-1">&quot;<asp:Literal ID="litQuote3Content" />&quot;</p>
+            <p class="text-center text-uppercase small"><strong><asp:Literal ID="litQuote3Name" /></strong><span class="font-weight-light">,&nbsp;<asp:Literal ID="litQuote3Caption" /></span></p>
         </div>
     </div>
 
