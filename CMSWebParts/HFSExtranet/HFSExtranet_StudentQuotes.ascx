@@ -6,36 +6,48 @@
             <div class="d-flex align-items-center col-12 col-lg-12">
                 <div class="owl-carousel owl-theme" id="owl-carousel">
                     <div class="item">
-                        <p class="lead text-center mb-1">&quot;<asp:Literal ID="litQuote1Content" runat="server" />&quot;</p>
-                        <p class="text-center text-uppercase small">
-                            <strong><asp:Literal ID="litQuote1Name" runat="server" /></strong>
-                            <span class="font-weight-light">,&nbsp;<asp:Literal ID="litQuote1Caption" runat="server" /></span>
-                        </p>
+                        <div class="inner">
+                            <p class="lead text-center mb-1">&quot;<asp:literal id="litQuote1Content" runat="server" />&quot;</p>
+                            <p class="text-center text-uppercase small">
+                                <strong>
+                                    <asp:literal id="litQuote1Name" runat="server" />
+                                </strong>
+                                <span class="font-weight-light">,&nbsp;<asp:literal id="litQuote1Caption" runat="server" /></span>
+                            </p>
+                        </div>
                     </div>
 
                     <div class="item">
-                        <p class="lead text-center mb-1">&quot;<asp:Literal ID="litQuote2Content" runat="server" />&quot;</p>
-                        <p class="text-center text-uppercase small">
-                            <strong><asp:Literal ID="litQuote2Name" runat="server" /></strong>
-                            <span class="font-weight-light">,&nbsp;<asp:Literal ID="litQuote2Caption" runat="server" /></span>
-                        </p>
+                        <div class="inner">
+                            <p class="lead text-center mb-1">&quot;<asp:literal id="litQuote2Content" runat="server" />&quot;</p>
+                            <p class="text-center text-uppercase small">
+                                <strong>
+                                    <asp:literal id="litQuote2Name" runat="server" />
+                                </strong>
+                                <span class="font-weight-light">,&nbsp;<asp:literal id="litQuote2Caption" runat="server" /></span>
+                            </p>
+                        </div>
                     </div>
 
                     <div class="item">
-                        <p class="lead text-center mb-1">&quot;<asp:Literal ID="litQuote3Content" runat="server" />&quot;</p>
-                        <p class="text-center text-uppercase small">
-                            <strong><asp:Literal ID="litQuote3Name" runat="server" /></strong>
-                            <span class="font-weight-light">,&nbsp;<asp:Literal ID="litQuote3Caption" runat="server" /></span>
-                        </p>
+                        <div class="inner">
+                            <p class="lead text-center mb-1">&quot;<asp:literal id="litQuote3Content" runat="server" />&quot;</p>
+                            <p class="text-center text-uppercase small">
+                                <strong>
+                                    <asp:literal id="litQuote3Name" runat="server" />
+                                </strong>
+                                <span class="font-weight-light">,&nbsp;<asp:literal id="litQuote3Caption" runat="server" /></span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"  />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"/> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
 
 <style>
     .ImageCaption {
@@ -50,42 +62,64 @@
 
     .owl-carousel .item {
         height: 10rem;
-        <!-- background: #4DC7A0; -->
+        text-align: center;
         padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .item .inner {
+        display: inline-block;
     }
 
     .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot.owl-nav {
         position: absolute;
         left: 20px;
         top: 50%;
-        <!-- background-color: var(--base-color) !important; -->
+        /*background-color: var(--base-color) !important;*/
         display: block;
         padding: 0 .3em !important;
         font-size: 3em;
         margin: 0;
-        <!-- cursor: pointer; -->
+        /*cursor: pointer;*/
         color: black;
         transform: translate(-50%, -50%);
+    }
+
+    .owl-nav span:hover {
+        color: #000;
+        background: none;
+    }
+
+    .owl-nav span {
+        color: #85754d;
     }
 
     .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot.owl-nav {
         position: absolute;
         right: -23px;
         top: 50%;
-        <!-- background-color: var(--base-color) !important; -->
+        /*background-color: var(--base-color) !important;*/
         display: block;
         padding: 0 .3em !important;
         font-size: 3em;
         margin: 0;
-        <!-- cursor: pointer; -->
+        /*cursor: pointer;*/
         color: black;
         transform: translate(-50%, -50%);
     }
 
+    .carousel-inner {
+        margin: auto;
+        width: max-content
+    }
+
     .owl-theme .owl-nav [class*=owl-]:hover {
-        background-color: black;
+        background: none !important;
     }
 </style>
+
 <script>  
     $(document).keydown(function (e) {
         if (e.keyCode == 37) {
@@ -132,3 +166,4 @@
     </ol>
 </div>
 -->
+
