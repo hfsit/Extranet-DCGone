@@ -112,7 +112,7 @@
 
     .carousel-inner {
         margin: auto;
-        width: max-content
+        /*width: max-content*/
     }
 
     .owl-theme .owl-nav [class*=owl-]:hover {
