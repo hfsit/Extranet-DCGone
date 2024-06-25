@@ -50,6 +50,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
 
 <style>
+.owl-carousel .owl-nav button:focus {
+outline: none;
+}
+.owl-carousel .owl-nav button:focus span {
+color: black;
+}
     .ImageCaption {
         margin-top: -60px;
         text-align: center;
